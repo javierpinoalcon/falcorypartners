@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcory Partners | Consulting & Investment</title>
+    <meta name="description" content="Servicios de consultoría estratégica e inversión.">
+    
+    <!-- Fuentes Google (Inter para un estilo moderno y limpio) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;        /* Azul muy oscuro elegante */
+            --card-bg: #1e293b;         /* Azul noche para la tarjeta */
+            --text-main: #f8fafc;       /* Blanco roto */
+            --text-muted: #94a3b8;      /* Gris claro */
+            --accent: #38bdf8;          /* Azul cyan para acentos */
+            --accent-hover: #0284c7;    /* Azul para estados hover */
+            --border: #334155;          /* Borde sutil */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-name span {
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-weight: 600;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+        <!-- Título principal -->
+        <h1 class="brand-name">Falcory<span>Partners</span></h1>
+        <p class="tagline">Consulting & Investment</p>
+
+        <!-- Descripción breve -->
+        <p class="description">
+            Acompañamos el desarrollo de proyectos estratégicos, soluciones tecnológicas y oportunidades de inversión.
+        </p>
+
+        <!-- Botón de acción principal -->
+        <a href="mailto:contact@falcorypartners.com" class="cta-button">
+            Contactar por Email
+        </a>
+
+        <!-- Enlaces secundarios o redes -->
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:contact@falcorypartners.com">contact@falcorypartners.com</a>
+        </nav>
+    </main>
+
+</body>
+</html>

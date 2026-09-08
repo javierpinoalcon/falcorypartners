@@ -1,149 +1,289 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falcory Partners | Consulting & Investment</title>
-    <meta name="description" content="Servicios de consultoría estratégica e inversión.">
+    <title>Falcory Partners | Conseil en Solutions Technologiques & Data</title>
     
-    <!-- Fuentes Google (Inter para un estilo moderno y limpio) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B1B2B'/><path d='M50 70 L20 25 L38 25 L50 48 L62 25 L80 25 Z' fill='%230088FF'/></svg>">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
         :root {
-            --bg-color: #0f172a;        /* Azul muy oscuro elegante */
-            --card-bg: #1e293b;         /* Azul noche para la tarjeta */
-            --text-main: #f8fafc;       /* Blanco roto */
-            --text-muted: #94a3b8;      /* Gris claro */
-            --accent: #38bdf8;          /* Azul cyan para acentos */
-            --accent-hover: #0284c7;    /* Azul para estados hover */
-            --border: #334155;          /* Borde sutil */
+            --navy-dark: #0B1B2B;
+            --blue-accent: #0066B2;
+            --blue-bright: #0088FF;
+            --green-dark: #0A2E23;
+            --gold-accent: #D4AF37;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Montserrat', -apple-system, sans-serif;
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
+            background-color: var(--bg-light);
             color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
             line-height: 1.6;
         }
 
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            max-width: 520px;
-            width: 100%;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        /* HEADER AVEC LOGO IMAGE */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 52px; /* Hauteur ajustée pour une très bonne lisibilité du logo */
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, #112538 100%);
+            color: var(--white);
+            padding: 5.5rem 2rem 4.5rem;
             text-align: center;
         }
 
-        .brand-name {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            color: var(--text-main);
-            margin-bottom: 0.25rem;
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
         }
 
-        .brand-name span {
-            color: var(--accent);
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.25rem;
+            line-height: 1.25;
         }
 
-        .tagline {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .description {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 2rem;
+        .hero p {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            margin-bottom: 2.5rem;
             font-weight: 300;
         }
 
-        .cta-button {
+        /* BUTTONS */
+        .btn {
             display: inline-block;
-            width: 100%;
-            background-color: var(--accent);
-            color: #0f172a;
+            background-color: var(--blue-accent);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
             font-weight: 600;
-            padding: 0.875rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
         }
 
-        .cta-button:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
+        .btn:hover {
+            background-color: var(--blue-bright);
+            transform: translateY(-1px);
         }
 
-        .cta-button:active {
-            transform: scale(0.98);
+        /* EXPERTISES SECTION */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
+        .section-title {
+            text-align: center;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 3.5rem;
+            letter-spacing: -0.5px;
         }
 
-        .footer-links a {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--blue-accent);
+            padding: 2rem;
+            border-radius: 6px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: var(--navy-dark);
+            margin-bottom: 0.85rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .card p {
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s ease;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .footer-links a:hover {
-            color: var(--accent);
+        /* BANNIÈRE ACCENTUÉE */
+        .accent-banner {
+            background-color: var(--green-dark);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin: 3rem auto 0;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .accent-banner h3 {
+            font-size: 1.3rem;
+            color: var(--gold-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .accent-banner p {
+            color: #D1D5DB;
+            font-size: 0.95rem;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 4.5rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #94A3B8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            background-color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.9rem; }
+            .accent-banner { flex-direction: column; text-align: center; }
+            .site-logo { height: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <main class="card">
-        <!-- Título principal -->
-        <h1 class="brand-name">Falcory<span>Partners</span></h1>
-        <p class="tagline">Consulting & Investment</p>
+    <header>
+        <div class="nav-container">
+            <!-- LOGO IMAGE EXATEMENT INTÉGRÉ ICI -->
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Falcory Partners" class="site-logo">
+            </a>
+            <a href="mailto:contact@falcorypartners.com" class="btn">Contact</a>
+        </div>
+    </header>
 
-        <!-- Descripción breve -->
-        <p class="description">
-            Acompañamos el desarrollo de proyectos estratégicos, soluciones tecnológicas y oportunidades de inversión.
-        </p>
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Conseil en Solutions Technologiques & Data</h1>
+            <p>Accompagnement stratégique et technique dans la conception, l'optimisation et la sécurisation de vos architectures de données et SI.</p>
+            <a href="#expertises" class="btn">Explorer nos expertises</a>
+        </div>
+    </section>
 
-        <!-- Botón de acción principal -->
-        <a href="mailto:contact@falcorypartners.com" class="cta-button">
-            Contactar por Email
-        </a>
+    <section id="expertises" class="section">
+        <h2 class="section-title">Nos Domaines d'Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Architecture Data</h3>
+                <p>Modélisation, optimisation des bases de données complexes et structuration d'architectures décisionnelles haute performance.</p>
+            </div>
+            <div class="card">
+                <h3>Intégration & Flux</h3>
+                <p>Mise en œuvre d'architectures d'échange (API, ESB, ETL) pour garantir des flux de données fluides, fiables et réglementaires.</p>
+            </div>
+            <div class="card">
+                <h3>Pilotage & Agile</h3>
+                <p>Cadrage technique, alignement fonctionnel et accompagnement méthodologique pour sécuriser vos livraisons logicielles.</p>
+            </div>
+            <div class="card">
+                <h3>Audit & Performance</h3>
+                <p>Analyse approfondie des requêtes, diagnostic de performance des systèmes et optimisation de vos processus SI.</p>
+            </div>
+        </div>
 
-        <!-- Enlaces secundarios o redes -->
-        <nav class="footer-links">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="mailto:contact@falcorypartners.com">contact@falcorypartners.com</a>
-        </nav>
-    </main>
+        <div class="accent-banner">
+            <div>
+                <h3>Positionnement Indépendant</h3>
+                <p>Intervention exclusive en conseil pur et architecture technique, sans parti pris logiciel ni intermédiaires.</p>
+            </div>
+            <a href="mailto:contact@falcorypartners.com" class="btn" style="background-color: var(--gold-accent); color: var(--navy-dark);">En savoir plus</a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Un projet ou un enjeu technique ?</h2>
+        <p>Échangeons sur vos problématiques d'architecture et de valorisation de données.</p>
+        <a href="mailto:contact@falcorypartners.com" class="btn">Prendre contact</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Falcory Partners SASU. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
